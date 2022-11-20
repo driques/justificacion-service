@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: justificacion-service
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    #platform: postgres
+    url: jdbc:postgresql://localhost:5432/justificacion
+    username: postgres
+    password: admin
+    driverClassName: org.postgresql.Driver
+server:
+  port: 8385
+  forward-headers-strategy: framework
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
